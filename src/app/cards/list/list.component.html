@@ -1,0 +1,16 @@
+<div class="container p-5">
+    <div class="btn-group pb-3" role="group" aria-label="Filter">
+        <button type="button" class="btn btn-secondary" (click)="filter('available')">For Sale</button>
+        <button type="button" class="btn btn-secondary" (click)="filter('sold')">Sold</button>
+    </div>
+    <div class="row text-center">
+        <div  class="card" style="width: 18rem;" *ngFor="let card of cards$ | async" class="col-4 p-3 ">
+            <img routerLink="/detail/{{card.id}}" class="card-img-top" [src]="card.src" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{card.name}}</h5>
+                <p class="card-text">Owner: {{card.owner}}</p>
+                <button href="#" class="btn btn-primary" *ngIf="card.price > 0" (click)="buy(card)">Buy ${{card.price}}</button>
+            </div>
+        </div>
+    </div>
+</div>

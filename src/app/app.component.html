@@ -1,0 +1,21 @@
+
+    <!-- <div class="header-bar"></div>
+    <nav>
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/cards" routerLinkActive="active">Cards</a>
+    </nav>
+    <router-outlet></router-outlet> -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-5">
+      <a class="navbar-brand" routerLink="/cards" routerLinkActive="active">All Collectibles</a>
+    
+      <div >
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/card/0" routerLinkActive="active">Create</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>

@@ -1,0 +1,56 @@
+<div class="container">
+    <form [formGroup]="cardForm">
+        <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+
+                <div class="card text-center" style="width: 18rem;">
+                    <img class="card-img-top" [src]="card?.src || defaultCat" alt="Card image cap">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <!-- Name input -->
+                <div class="form-group row mb-4">
+                    <label class="col-sm-2 col-form-label" for="name">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" formControlName="name" class="form-control" />
+                    </div>
+                </div>
+
+                <!-- Owner input -->
+                <div class="form-group row mb-4">
+                    <label class="col-sm-2 col-form-label" for="owner">Owner</label>
+                    <div class="col-sm-10">
+                        <input type="text" formControlName="owner" class="form-control" />
+                    </div>
+                </div>
+
+                <!-- Price input -->
+                <div class="form-group row mb-4">
+                    <label class="col-sm-2 col-form-label" for="price">For Sale</label>
+                    <div class="col-sm-10">
+                        <input type="number" formControlName="price" class="form-control" placeholder="Price" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4 offset-sm-8">
+                        <button *ngIf="card.id == 0" type="submit" class="btn btn-primary btn-block"
+                            (click)="create(cardForm.value)">CREATE COLLECTIBLE</button>
+                        <button *ngIf="card.id > 0" type="submit" class="btn btn-primary btn-block"
+                            (click)="update(cardForm.value)">UPDATE COLLECTIBLE</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </form>
+</div>
