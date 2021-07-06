@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Card } from 'src/app/models/card.model';
@@ -20,7 +21,8 @@ export class ListComponent implements OnInit {
 
   constructor(
     private cardsService: CardsService, 
-    private cardsQuery: CardsQuery
+    private cardsQuery: CardsQuery,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,6 +42,10 @@ export class ListComponent implements OnInit {
     _card.status = 'sold';
     _card.price = 0;
     await this.cardsService.update(_card.id,_card).toPromise();
+  }
+
+  async viewCard(card: Card) {
+    this.router.navigate([`/card/${card.id}`])
   }
 
 }

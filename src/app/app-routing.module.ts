@@ -2,12 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // { path: 'home', component: HomeComponent },
-  
-  { path: '',   redirectTo: '/', pathMatch: 'full' }, // redirect to `first-component`
-  { path: '**', redirectTo: '/' },  // Wildcard route for a 404 page
+  { path: '**', redirectTo: '/cards' },  // Wildcard route, catch all undefined route and redirect to home
   {
-    path: '',
+    path: 'cards',
     loadChildren: () => import('./cards/cards.module').then((m) => m.CardsModule),
   },
 ];

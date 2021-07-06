@@ -4,8 +4,8 @@
       "id": 11,
       "name": "Flufferton Sternbuncle",
       "owner": "Johny",
-      "price": 100,
-      "status": "available",
+      "price": 0,
+      "status": "sold",
       "src": "../../assets/cats/FluffertonSternbuncle.svg"
     },
     {

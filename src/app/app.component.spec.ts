@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ng-interview-app'`, () => {
+  it(`should have as title 'ng-akita-demo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng-interview-app');
+    expect(app.title).toEqual('ng-akita-demo');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ng-interview-app app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ng-akita-demo app is running!');
   });
 });
